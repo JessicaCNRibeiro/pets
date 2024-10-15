@@ -39,7 +39,7 @@ export class PetsService{
 
   async updatePet(id: number, pet: Pet): Promise<void> {
     const index = pets.findIndex((p) => p.id === id);
-    if (index < 0) throw Error;
+    if (index < 0) throw notFound;
     pets[index] = pet;
   }
 
